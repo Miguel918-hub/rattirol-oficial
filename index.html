@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>RattiroL - Painel do Bot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #0d0d0d;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    header {
+      background-color: #111;
+      padding: 20px;
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+      color: #ff5555;
+      letter-spacing: 2px;
+    }
+
+    main {
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      background: #1e1e1e;
+      border: 1px solid #333;
+      border-radius: 5px;
+      color: white;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 20px;
+      background: #ff5555;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      background: #ff2222;
+    }
+
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    section {
+      margin-top: 60px;
+    }
+
+    h2 {
+      color: #ff5555;
+      border-bottom: 1px solid #333;
+      padding-bottom: 10px;
+    }
+
+    a {
+      color: #ff5555;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    RattiroL - Configuração do Bot
+  </header>
+
+  <main>
+    <form id="botForm">
+      <label for="name">Nome do Bot:</label>
+      <input type="text" id="name" placeholder="Ex: RattiroL" required>
+
+      <label for="description">Descrição:</label>
+      <textarea id="description" rows="4" placeholder="Descreva seu bot aqui..." required></textarea>
+
+      <label for="avatar">Link do Avatar (URL da imagem):</label>
+      <input type="url" id="avatar" placeholder="https://example.com/avatar.png">
+
+      <label for="commands">Comandos principais:</label>
+      <textarea id="commands" rows="3" placeholder="Ex: /rir, /baninvertido, /ironizar"></textarea>
+
+      <button type="submit">Salvar Configurações</button>
+    </form>
+
+    <div id="output" style="margin-top: 40px;"></div>
+
+    <section id="termos">
+      <h2>📜 Termos de Serviço</h2>
+      <p>Ao usar o bot RattiroL, você concorda em não utilizá-lo para fins maliciosos, spam ou automações não autorizadas. Reservamo-nos o direito de banir usuários ou servidores que violem os termos. Uso limitado à sátira e entretenimento dentro das diretrizes do Discord.</p>
+    </section>
+
+    <section id="privacidade">
+      <h2>🔐 Política de Privacidade</h2>
+      <p>O bot RattiroL não coleta, armazena ou compartilha informações pessoais dos usuários. Todas as interações são processadas em tempo real e não são registradas. Não utilizamos cookies ou rastreadores.</p>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 RattiroL Bot | Feito por General 🦊
+  </footer>
+
+  <script>
+    document.getElementById("botForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      
+      const name = document.getElementById("name").value;
+      const description = document.getElementById("description").value;
+      const avatar = document.getElementById("avatar").value;
+      const commands = document.getElementById("commands").value;
+
+      const output = document.getElementById("output");
+      output.innerHTML = `
+        <h2>🔧 Configuração Gerada:</h2>
+        <p><strong>Nome:</strong> ${name}</p>
+        <p><strong>Descrição:</strong> ${description}</p>
+        <p><strong>Avatar:</strong> <a href="${avatar}" target="_blank">${avatar}</a></p>
+        <p><strong>Comandos:</strong> ${commands}</p>
+      `;
+    });
+  </script>
+
+</body>
+</html>
